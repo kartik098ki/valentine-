@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Genius 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+    </div>
+
+    <!-- Floating Decorative Elements -->
+    <div class="floating-hearts">
+        <div class="float-heart">💕</div>
+        <div class="float-heart">💖</div>
+        <div class="float-heart">✨</div>
+        <div class="float-heart">💝</div>
+        <div class="float-heart">🌟</div>
+    </div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Main Page -->
+    <div class="main-container" id="mainPage">
+        <div class="content-wrapper">
+            <!-- Hero Section -->
+            <section class="hero-section" id="heroSection">
+                <div class="glass-card hero-card">
+                    <div class="card-glow"></div>
+
+                    <div class="hero-content">
+                        <div class="title-container">
+                            <span class="title-accent">To My</span>
+                            <h1 class="hero-title">
+                                <span class="gradient-text">Genius</span>
+                            </h1>
+                        </div>
+
+                        <div class="cat-showcase-3d">
+                            <div class="cat-platform">
+                                <div class="platform-ring ring-1"></div>
+                                <div class="platform-ring ring-2"></div>
+                                <div class="platform-ring ring-3"></div>
+                            </div>
+                            <div class="cat-container">
+                                <div class="cat-glow-effect"></div>
+                                <img src="cat_no_background.png" alt="For You" class="cat-image" id="catImage">
+                                <div class="cat-sparkles">
+                                    <span class="sparkle">✨</span>
+                                    <span class="sparkle">💫</span>
+                                    <span class="sparkle">⭐</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="message-container">
+                            <div class="message-box glass-element">
+                                <p class="typing-message" id="typingMessage"></p>
+                                <span class="typing-cursor">|</span>
+                            </div>
+                        </div>
+
+                        <button class="premium-btn continue-btn" id="continueBtn"
+                            style="opacity: 0; pointer-events: none;">
+                            <span class="btn-bg"></span>
+                            <span class="btn-content">
+                                <span class="btn-text">Continue</span>
+                                <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M7 15L12 10L7 5" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Question Section -->
+            <section class="question-section" id="questionSection" style="display: none;">
+                <div class="glass-card question-card">
+                    <div class="card-glow"></div>
+
+                    <div class="question-container">
+                        <div class="question-header">
+                            <div class="decorative-hearts">
+                                <span class="deco-heart">💕</span>
+                                <span class="deco-heart">💖</span>
+                                <span class="deco-heart">💕</span>
+                            </div>
+
+                            <h2 class="question-title">
+                                <span class="gradient-text">Will you be my Valentine?</span>
+                            </h2>
+
+                            <div class="liquid-divider">
+                                <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="liquid-path" d="M0,10 Q50,0 100,10 T200,10" fill="none"
+                                        stroke="url(#liquidGradient)" stroke-width="2" />
+                                    <defs>
+                                        <linearGradient id="liquidGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                                            <stop offset="50%" style="stop-color:#FF69B4;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+
+                            <p class="question-subtitle">Let's make this Valentine's Day unforgettable</p>
+                            <p class="question-from">
+                                <span class="from-label">From</span>
+                                <span class="from-name gradient-text">Your Mottuu</span>
+                                <span class="from-emoji">💕</span>
+                            </p>
+                        </div>
+
+                        <div class="choices-container">
+                            <button class="liquid-btn yes-btn" id="yesBtn">
+                                <span class="liquid-bg"></span>
+                                <span class="btn-shine"></span>
+                                <span class="btn-content">
+                                    <span class="btn-icon">💕</span>
+                                    <span class="btn-text">Yes, Absolutely!</span>
+                                    <span class="btn-icon">💕</span>
+                                </span>
+                                <div class="btn-particles"></div>
+                            </button>
+
+                            <button class="liquid-btn no-btn" id="noBtn">
+                                <span class="liquid-bg"></span>
+                                <span class="btn-content">
+                                    <span class="btn-text" id="noText">No</span>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="reaction-container">
+                            <p class="reaction-message" id="reactionMessage"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Success Page -->
+    <div class="success-page" id="successPage" style="display: none;">
+        <div class="success-aurora">
+            <div class="success-aurora-layer layer-1"></div>
+            <div class="success-aurora-layer layer-2"></div>
+            <div class="success-aurora-layer layer-3"></div>
+        </div>
+
+        <canvas id="confettiCanvas"></canvas>
+        <canvas id="fireworksCanvas"></canvas>
+
+        <div class="success-content">
+            <div class="success-icon">
+                <div class="icon-ring ring-1"></div>
+                <div class="icon-ring ring-2"></div>
+                <div class="icon-ring ring-3"></div>
+                <svg class="checkmark" width="80" height="80" viewBox="0 0 80 80">
+                    <circle class="checkmark-circle" cx="40" cy="40" r="36" fill="none" stroke="url(#checkGradient)"
+                        stroke-width="3" />
+                    <path class="checkmark-check" d="M25 40L35 50L55 30" fill="none" stroke="url(#checkGradient)"
+                        stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    <defs>
+                        <linearGradient id="checkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <h1 class="success-title">
+                <span class="gradient-text">Perfect Choice</span>
+            </h1>
+
+            <div class="success-messages">
+                <p class="success-line fade-in-1">I knew you'd say yes, my Genius.</p>
+                <p class="success-line fade-in-2">You make every moment worth cherishing.</p>
+                <p class="success-line fade-in-3 special-line">
+                    <span class="gradient-text">Can't wait to celebrate this Valentine's Day with you.</span>
+                </p>
+            </div>
+
+            <div class="couple-container">
+                <div class="couple-card glass-element">
+                    <div class="couple-name name-1">
+                        <span class="name-text">Genius</span>
+                    </div>
+                    <div class="beating-heart">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <path
+                                d="M20 35l-2-1.8C10 26.4 4 21.2 4 14.5 4 9.4 8 5.5 13 5.5c2.9 0 5.7 1.4 7 3.5 1.3-2.1 4.1-3.5 7-3.5 5 0 9 3.9 9 9 0 6.7-6 11.9-14 18.7L20 35z"
+                                fill="url(#heartGradient)" />
+                            <defs>
+                                <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FF1493;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="couple-name name-2">
+                        <span class="name-text">Koffee</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-message">
+                <p class="forever-text">Forever yours,</p>
+                <p class="signature gradient-text">Your Boiffi · Koffee · Mottuu</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
